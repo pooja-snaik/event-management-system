@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+   
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            width: 100%;
+            padding: 0 10px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%), url("image1.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            width: 400px;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.1); /* Add background for better contrast */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .input-text {
+            position: relative;
+            border-bottom: 2px solid #e3d3ea;
+            margin: 15px 0;
+        }
+
+        .input-text label {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            color: #cabdcf;
+            font-size: 16px;
+            pointer-events: none;
+            transition: 0.15s ease;
+        }
+
+        .input-text input {
+            width: 100%;
+            height: 40px;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .input-text input:focus ~ label,
+        .input-text input:valid ~ label {
+            font-size: 0.8rem;
+            top: 10px;
+            transform: translateY(-120%);
+        }
+
+        button {
+            background:lightblue;
+            color: #e3d3ea;
+            font-weight: 600;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 3px;
+            font-size: 16px;
+            border: 2px solid transparent;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #fff;
+        }
+
+        .signup {
+            text-align: center;
+            margin-top: 30px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form action="sign.php" method="post" hre>
+            <label for="username" style="padding-right: 90%; font-size:large; color: #fff;">Username:</label>
+            <div class="input-text">
+                
+                <input type="text" id="username" name="username" required>
+            </div>
+            <label for="email" style="padding-right: 90%; font-size:medium; color: #fff;">Email:</label>
+            <div class="input-text">
+               
+                <input type="email" id="email" name="email" required>
+            </div>
+            <label for="password" style="padding-right: 90%; font-size:medium; color: #fff;">Password:</label>
+            <div class="input-text">
+                
+                <input type="password" id="password" name="password" minlength="8" required>
+            </div>
+            <label for="confirm_password" style="padding-right: 90%; font-size:small; color: #fff;">Confirm Password:</label>
+            <div class="input-text">
+                <input type="password" id="confirm_password" name="confirm_password" required>
+                
+            </div>
+            <button type="submit" action="b.php">Signup</button>
+        </form>
+    </div>  
+</body>
+</html>
